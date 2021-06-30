@@ -9,9 +9,9 @@ import { MoviesService } from '../movies.service';
 })
 export class HomePageComponent implements OnInit {
   movies: any;
-
+  // pelis = '../movies.json';
   constructor(private moviesService: MoviesService) {
-    moviesService.getMovies$().subscribe(data=> console.log(data));
+    moviesService.getMovies$().subscribe(data => console.log(data));
 
   }
 
