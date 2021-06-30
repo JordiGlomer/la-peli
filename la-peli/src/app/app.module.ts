@@ -9,18 +9,24 @@ import { MoviePageComponent } from './movie-page/movie-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MoviesService } from './movies.service';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { FormsModule } from '@angular/forms';
+import { PlantillaComponent } from './plantilla/plantilla.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    MoviePageComponent
+    MoviePageComponent,
+    PlantillaComponent,
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FormsModule,
     NgxSkeletonLoaderModule.forRoot({ animation: 'pulse', loadingText: 'This item is actually loading...' })
   ],
   providers: [MoviesService],

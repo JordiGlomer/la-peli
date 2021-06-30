@@ -1,5 +1,15 @@
-p {
+p  {
   display: flex;
     justify-items: center;
     justify-content: center;
+}
+li{
+  list-style-type: none;
+}
+div{
+  margin: 50px;
+  align-items: center;
+  font-size: large;
+  border:solid 1px rgb(206, 178, 178);
+
 }
