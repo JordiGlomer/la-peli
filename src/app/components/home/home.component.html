@@ -1,0 +1,6 @@
+<mat-grid-list [gutterSize]="'10px'" cols="3" >
+    <mat-grid-tile *ngFor='let movie of movies'>
+        <a [routerLink]="['/movie',movie.id]"><img [src]="movie.poster" alt="movie.title"></a>
+    </mat-grid-tile>
+  </mat-grid-list>
+<!-- {{movies | json}} -->
