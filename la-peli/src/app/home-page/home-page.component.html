@@ -1,7 +1,8 @@
 
-<p>
-    <form>
-        <input name="enter movie" ngModel placeholder="Enter a movie">
-
-    </form>
+<mat-grid-list [gutterSize]="'10px'" cols="3" >
+    <mat-grid-tile *ngFor='let movie of movies'>
+        <a [routerLink]="['/movie',movie.id]"><img [src]="movie.poster" alt="movie.title"></a>
+    </mat-grid-tile>
+  </mat-grid-list>
     <!-- <button [value]="movies" *ngFor="let movie of movies">{{movies}}</button> -->
+

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MoviesService } from '../movies.service';
-// import { MOVIES } from ''
-// import  { Movie } from ''
+import { ActivatedRoute, Router } from '@angular/router';
+import { MovieService } from 'src/app/shared/services/movie.service';
+import { switchMap } from 'rxjs/operators'
+import { Movie } from 'src/app/shared/model/movie'
 
 
 @Component({
@@ -10,19 +11,29 @@ import { MoviesService } from '../movies.service';
   styleUrls: ['./movie-page.component.scss']
 })
 export class MoviePageComponent implements OnInit {
-//  movies = MOVIES;
-//  selectedMovie: Movie;
-movies: any;
-  constructor(private ms: MoviesService) {
-   this.ms.getMovies$().subscribe(data=>this.movies=data)
-  }
+
+  movie!:Movie;
+
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private movieService: MovieService) {
+
+  };
 
   ngOnInit(): void {
+    this.route.paramMap.pipe(
+      switchMap(params => this.movieService.getMovie$(params.get('id') as string)))
+        .subscribe(movie => this.movie = movie )
   }
+  edit(){
+    this.router.navigate(['movie/editar']);
 // onSelect(movie:Movie): void{
 //   this.selectedMovie = movie;
 // }
 //  goBack(): void{
 //    this.movies
 //  }
+}
 }

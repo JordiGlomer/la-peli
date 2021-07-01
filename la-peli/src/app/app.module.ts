@@ -7,17 +7,20 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { MoviePageComponent } from './movie-page/movie-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MoviesService } from './movies.service';
-import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
-import { FormsModule } from '@angular/forms';
-import { PlantillaComponent } from './plantilla/plantilla.component';
+import { MaterialModule } from './shared/material/material.module';
+import { FormMovieComponent } from './form-movie/form-movie.component';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     MoviePageComponent,
-    PlantillaComponent,
+    FormMovieComponent,
+
+
 
 
   ],
@@ -26,10 +29,11 @@ import { PlantillaComponent } from './plantilla/plantilla.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    FormsModule,
-    NgxSkeletonLoaderModule.forRoot({ animation: 'pulse', loadingText: 'This item is actually loading...' })
+    MaterialModule
+
+
   ],
-  providers: [MoviesService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

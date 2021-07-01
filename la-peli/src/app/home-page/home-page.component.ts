@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MoviesService } from '../movies.service';
-
+import { MovieService } from 'src/app/shared/services/movie.service';
+import { Movie } from '../shared/model/movie';
 
 @Component({
   selector: 'app-home-page',
@@ -8,10 +8,11 @@ import { MoviesService } from '../movies.service';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
-  movies: any;
-  // pelis = '../movies.json';
-  constructor(private moviesService: MoviesService) {
-    moviesService.getMovies$().subscribe(data => console.log(data));
+  movies!: Array<Movie>;
+
+  constructor(private movieService: MovieService) {
+    this.movieService.getMovies$().subscribe(data=>this.movies=data)
+    // moviesService.getMovies$().subscribe(data => console.log(data));
 
   }
 
