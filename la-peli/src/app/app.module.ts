@@ -11,17 +11,12 @@ import { MaterialModule } from './shared/material/material.module';
 import { FormMovieComponent } from './form-movie/form-movie.component';
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     MoviePageComponent,
     FormMovieComponent,
-
-
-
 
   ],
   imports: [
@@ -30,7 +25,6 @@ import { FormMovieComponent } from './form-movie/form-movie.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule
-
 
   ],
   providers: [],
